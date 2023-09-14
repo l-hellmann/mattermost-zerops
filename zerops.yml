@@ -3,6 +3,7 @@ mattermost:
     base: [ ubuntu@22.04 ]
     build: [ ]
     deploy: [ "." ]
+    prepare: [ "." ]
 
   run:
     prepare:
@@ -10,7 +11,7 @@ mattermost:
       - apt-get update
       - apt-get install mattermost -y
       - ls -la
-      - $(pwd)
+      - echo $(pwd)
       - install -C -m 600 -o mattermost -g mattermost config.json /opt/mattermost/config/config.json
     envReplace:
      target: /opt/mattermost/config/config.json
