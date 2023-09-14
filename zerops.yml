@@ -12,5 +12,5 @@ mattermost:
       - install -C -m 600 -o mattermost -g mattermost config.json /opt/mattermost/config/config.json
     envReplace:
      target: /opt/mattermost/config/config.json
-     delimiter: %%
+     delimiter: '%%'
     start: ./mattermost
