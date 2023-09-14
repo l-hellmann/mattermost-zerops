@@ -1,1 +1,15 @@
-init
+mattermost:
+  build:
+    base: [ ubuntu@22.04 ]
+    build: [ ]
+    deploy: [ "." ]
+
+  run:
+    prepare:
+      - curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
+      - apt update
+      - apt install mattermost -y
+      - install -C -m 600 -o mattermost -g mattermost config.json /opt/mattermost/config/config.json
+    envReplace:
+     target: /opt/mattermost/config/config.json
+    start: ./mattermost
