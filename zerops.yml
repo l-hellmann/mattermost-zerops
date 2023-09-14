@@ -10,6 +10,7 @@ mattermost:
       - apt-get update
       - apt-get install mattermost -y
       - ls -la
+      - echo $PWD
       - install -C -m 600 -o mattermost -g mattermost config.json /opt/mattermost/config/config.json
     envReplace:
      target: /opt/mattermost/config/config.json
