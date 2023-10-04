@@ -13,4 +13,7 @@ mattermost:
     envReplace:
      target: config.json
      delimiter: '%%'
+    init:
+      - rm /opt/mattermost/config/config.json
+      - bash -x migrate.sh
     start: mattermost -c config.json
