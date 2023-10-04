@@ -10,10 +10,7 @@ mattermost:
       - curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
       - apt-get update
       - apt-get install mattermost -y
-      - ls -la
-      - echo $(pwd)
-      - install -C -m 600 -o mattermost -g mattermost config.json /opt/mattermost/config/config.json
     envReplace:
-     target: /opt/mattermost/config/config.json
+     target: config.json
      delimiter: '%%'
-    start: ./mattermost
+    start: mattermost -c config.json
