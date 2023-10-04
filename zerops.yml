@@ -3,7 +3,7 @@ mattermost:
     base: [ ubuntu@22.04 ]
     build: [ ]
     deploy: [ "." ]
-    addToRunPreape: [ "." ]
+    addToRunPrepare: [ "." ]
 
   run:
     prepare:
