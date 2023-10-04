@@ -2,7 +2,7 @@ mattermost:
   build:
     base: [ ubuntu@22.04 ]
     build: [ ]
-    deploy: [ "." ]
+    deploy: [ "." ] 
     addToRunPrepare: [ "config.json" ]
 
   run:
