@@ -1,9 +1,8 @@
 #!/bin/bash
 
-if [ -f migrate ]; then
-    exit 0
+INIT_DONE=$(psql -h pgdb -U pgdb pgdb -t -c "SELECT 1 FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'db_migrations';" | tr -d '[:blank:]')
+if [[ ${INIT_DONE} -ne 1 ]]; then
+    mattermost db init -c ${connectionString}
 fi
 
-mattermost db migrate -c config.json
-
-touch migrate
+mattermost db migrate -c ${connectionString}

@@ -9,7 +9,8 @@ mattermost:
     prepare:
       - curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
       - apt-get update
-      - apt-get install mattermost -y
+      - apt-get install mattermost postgresql-client -y
+      - echo $pgdb_hostname:$pgdb_port:$pgdb_hostname:$pgdb_user:$pgdb_password > /root/.pgpass
     envReplace:
      target: config.json
      delimiter: '%%'
