@@ -10,6 +10,8 @@ mattermost:
       - curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
       - apt-get update
       - apt-get install mattermost postgresql-client -y
+      - mkdir .client
+      - mkdir .plugins
       - echo $pgdb_hostname:$pgdb_port:$pgdb_hostname:$pgdb_user:$pgdb_password > /root/.pgpass
       - chmod 0600 /root/.pgpass
     envReplace:

@@ -567,7 +567,7 @@
     "ProductSettings": {},
     "PluginSettings": {
         "Enable": true,
-        "EnableUploads": false,
+        "EnableUploads": true,
         "AllowInsecureDownloadURL": false,
         "EnableHealthCheck": true,
         "Directory": "./plugins",
