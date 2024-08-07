@@ -1,11 +1,9 @@
-# Example import.yml
-```yaml
 project:
   name: mattermost-example
 services:
   - hostname: pgdb
     type: postgresql@12
-    mode: HA
+    mode: NON_HA
 
   - hostname: s3
     type: object-storage
@@ -18,4 +16,3 @@ services:
     maxContainers: 1
     buildFromGit: https://github.com/l-hellmann/mattermost-zerops@main
     enableSubdomainAccess: true
-```
