@@ -7,7 +7,7 @@ services:
 
   - hostname: s3
     type: object-storage
-    objectStoragePolicy: public-write # debug
+    objectStoragePolicy: private
     objectStorageSize: 2
 
   - hostname: mattermost
