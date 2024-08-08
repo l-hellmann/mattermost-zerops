@@ -1,5 +1,5 @@
 project:
-  name: mattermost-example
+  name: mattermost
 services:
   - hostname: pgdb
     type: postgresql@12
@@ -12,7 +12,7 @@ services:
     objectStorageSize: 2
     priority: 10
 
-  - hostname: mattermost
+  - hostname: backend
     type: ubuntu@22.04
     minContainers: 1
     maxContainers: 1

@@ -9,7 +9,7 @@ Locate "Import project" in the menu in the top left corner and paste in followin
 
 ```yaml
 project:
-  name: mattermost-example
+  name: mattermost
 services:
   - hostname: pgdb
     type: postgresql@12
@@ -22,7 +22,7 @@ services:
     objectStorageSize: 2
     priority: 10
 
-  - hostname: mattermost
+  - hostname: backend
     type: ubuntu@22.04
     minContainers: 1
     maxContainers: 1
