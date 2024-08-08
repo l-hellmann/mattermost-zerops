@@ -14,11 +14,13 @@ services:
   - hostname: pgdb
     type: postgresql@12
     mode: HA
+    priority: 10
 
   - hostname: s3
     type: object-storage
     objectStoragePolicy: private
     objectStorageSize: 2
+    priority: 10
 
   - hostname: mattermost
     type: ubuntu@22.04
@@ -26,4 +28,5 @@ services:
     maxContainers: 1
     buildFromGit: https://github.com/l-hellmann/mattermost-zerops@main
     enableSubdomainAccess: true
+    priority: 1
 ```
