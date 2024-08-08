@@ -28,3 +28,9 @@ zerops:
       ports:
         - port: 8065
           httpSupport: true
+      healthCheck:
+        httpGet:
+          scheme: http
+          host: localhost
+          port: 8065
+          path: /api/v4/system/ping
