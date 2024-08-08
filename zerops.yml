@@ -8,8 +8,10 @@ zerops:
       base: "22.04"
       prepareCommands:
         - curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
-        - apt-get update
-        - apt-get install mattermost postgresql-client -y
+        - sudo apt-get update
+        - sudo apt-get install mattermost postgresql-client -y
+        - sudo systemctl disable mattermost
+        - sudo systemctl stop mattermost
       initCommands:
         - ./migrate.sh
       start: /usr/bin/mattermost server
@@ -25,6 +27,7 @@ zerops:
         MM_FILESETTINGS_AMAZONS3SECRETACCESSKEY: ${s3_secretAccessKey}
         MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE: en
         MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE: en
+        MM_LOGSETTINGS_CONSOLEJSON: 'false'
       ports:
         - port: 8065
           httpSupport: true
