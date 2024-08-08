@@ -9,7 +9,7 @@ services:
   - hostname: s3
     type: object-storage
     objectStoragePolicy: private
-    objectStorageSize: 2
+    objectStorageSize: 2 #GB
     priority: 10
 
   - hostname: backend
