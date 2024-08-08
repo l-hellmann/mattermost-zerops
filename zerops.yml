@@ -28,6 +28,7 @@ zerops:
         MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE: en
         MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE: en
         MM_LOGSETTINGS_CONSOLEJSON: 'false'
+        MM_LOGSETTINGS_ENABLEFILE: 'false'
       ports:
         - port: 8065
           httpSupport: true
